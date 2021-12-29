@@ -4,13 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table()
+@Table(name = "employee_tbl")
 @Entity
 public class Employee {
 
     @Id
     private Long id;
-//    dummy
     private String name;
     private String dept;
     private int salary;
