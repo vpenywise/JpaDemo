@@ -51,4 +51,23 @@ class DemoApplicationTests {
         System.out.println(all.size());
     }
 
+    @Test
+    void duplicateEmp() {
+        Employee employee = new Employee();
+        employee.setDept("dept");
+        employee.setName("GoshYtu663334");
+        employee.setSalary(100);
+
+        long leftLimit = 1L;
+        long rightLimit = 10L;
+        long generatedLong = leftLimit + (long) (Math.random() * (rightLimit - leftLimit));
+
+        employee.setId(generatedLong);
+        Employee save = employeeRepository.save(employee);
+        assertNotNull(save);
+
+        Employee save2 = employeeRepository.save(employee);
+        assertNotNull(save2);
+
+    }
 }
