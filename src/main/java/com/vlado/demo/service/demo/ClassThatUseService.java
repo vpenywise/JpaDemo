@@ -7,6 +7,7 @@ public class ClassThatUseService {
     private MyService myService;
 
     public void methodThatUseMyService() {
+        this.myService = new MyService();
         myService.firstMethod();
     }
 }

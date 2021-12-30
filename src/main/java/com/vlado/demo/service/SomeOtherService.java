@@ -6,6 +6,7 @@ public class SomeOtherService {
 
     public void secondMethod() {
         System.out.println("Second method");
+        this.anotherInnerObject = new AnotherInnerObject();
         anotherInnerObject.innerMethod();
 
     }

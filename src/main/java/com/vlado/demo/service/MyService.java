@@ -7,6 +7,7 @@ public class MyService {
 
     public void firstMethod() {
         System.out.println("First method");
+        this.someOtherService = new SomeOtherService();
         someOtherService.secondMethod();
     }
 
