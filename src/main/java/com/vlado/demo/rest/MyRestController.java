@@ -1,10 +1,9 @@
 package com.vlado.demo.rest;
 
+import com.vlado.demo.db.Employee;
 import com.vlado.demo.db.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MyRestController {
@@ -17,8 +16,15 @@ public class MyRestController {
         return employeeRepository.findAll();
     }
 
-    @GetMapping(value = "/employee",params = "id")
+    @GetMapping(value = "/employee", params = "id")
     public Object getRecordById(@RequestParam("id") Long id) {
         return employeeRepository.findById(id);
     }
+
+    @PostMapping(value = "/employee")
+    public Object addRecord(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+
 }
